@@ -1,0 +1,37 @@
+@model PAW.Models.DTO.ProductDTO
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <h2>Product Details</h2>
+    <hr />
+    <div class="card shadow-sm col-md-8">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Product ID</dt>
+                <dd class="col-sm-8">@Model.ProductId</dd>
+
+                <dt class="col-sm-4">Name</dt>
+                <dd class="col-sm-8">@Model.Name</dd>
+
+                <dt class="col-sm-4">Description</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4">Rating</dt>
+                <dd class="col-sm-8">@Model.Rating / 5</dd>
+
+                <dt class="col-sm-4">Comments</dt>
+                <dd class="col-sm-8">@Model.Comments</dd>
+
+                <dt class="col-sm-4">Created Date</dt>
+                <dd class="col-sm-8">@Model.CreatedDate.ToString("yyyy-MM-dd HH:mm")</dd>
+
+                <dt class="col-sm-4">Modified Date</dt>
+                <dd class="col-sm-8">@Model.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</dd>
+            </dl>
+            <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

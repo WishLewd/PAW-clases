@@ -1,0 +1,29 @@
+@model PAW.Models.DTO.TaskDTO
+@{
+    ViewData["Title"] = "Delete Task";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger">Delete Task</h2>
+    <h4>Are you sure you want to delete this task?</h4>
+    <hr />
+    <div class="card shadow-sm col-md-8">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">ID</dt>
+                <dd class="col-sm-8">@Model.Id</dd>
+
+                <dt class="col-sm-4">Name</dt>
+                <dd class="col-sm-8">@Model.Name</dd>
+
+                <dt class="col-sm-4">Status</dt>
+                <dd class="col-sm-8">@Model.Status</dd>
+            </dl>
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

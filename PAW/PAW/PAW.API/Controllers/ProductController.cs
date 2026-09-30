@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using PAW.DataAccess.Repositories;
 using PAW.Models;
 using PAW.Models.DTO;
@@ -54,6 +54,27 @@ namespace PAW.API.Controllers
         public async Task<bool> Delete(Product Product)
         {
             return await productRepository.DeleteAsync(Product);
+        }
+
+        [HttpPost("single")]
+        public async Task<bool> Create([FromBody] Product product)
+        {
+            return await productRepository.CreateAsync(product);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<bool> Update(int id, [FromBody] Product product)
+        {
+            product.ProductId = id;
+            return await productRepository.UpdateAsync(product);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<bool> DeleteById(int id)
+        {
+            var product = await productRepository.FindAsync(id);
+            if (product == null) return false;
+            return await productRepository.DeleteAsync(product);
         }
     }
 }

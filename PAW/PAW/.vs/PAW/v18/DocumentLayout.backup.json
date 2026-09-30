@@ -1,0 +1,307 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\PAW-clases\\PAW\\PAW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC71D11F-8E8B-453D-B4BE-B6CF8825D63C}|PAW.API\\PAW.API.csproj|c:\\paw-clases\\paw\\paw\\paw.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC71D11F-8E8B-453D-B4BE-B6CF8825D63C}|PAW.API\\PAW.API.csproj|solutionrelative:paw.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|c:\\paw-clases\\paw\\paw\\paw.models\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|solutionrelative:paw.models\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{168DB680-82D5-3A8D-C8CB-420529DB86CA}|PAW.Architecture\\PAW.Architecture.csproj|c:\\paw-clases\\paw\\paw\\paw.architecture\\providers\\restprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{168DB680-82D5-3A8D-C8CB-420529DB86CA}|PAW.Architecture\\PAW.Architecture.csproj|solutionrelative:paw.architecture\\providers\\restprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|c:\\paw-clases\\paw\\paw\\paw.dataaccess\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|solutionrelative:paw.dataaccess\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|c:\\paw-clases\\paw\\paw\\paw.models\\partial\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|solutionrelative:paw.models\\partial\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|c:\\paw-clases\\paw\\paw\\paw.models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92861E82-4A93-4940-B26C-566CB35777DB}|PAW.Models\\PAW.Models.csproj|solutionrelative:paw.models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|c:\\paw-clases\\paw\\paw\\paw.dataaccess\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|solutionrelative:paw.dataaccess\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|c:\\paw-clases\\paw\\paw\\paw.dataaccess\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|solutionrelative:paw.dataaccess\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|c:\\paw-clases\\paw\\paw\\paw.dataaccess\\mssql\\migrationhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73D1C552-472F-4E46-A34D-B1A19F677D60}|PAW.DataAccess\\PAW.DataAccess.csproj|solutionrelative:paw.dataaccess\\mssql\\migrationhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|c:\\paw-clases\\paw\\paw\\paw.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F342937-4DAE-42E5-9789-97384BFDACE2}|PAW.Web\\PAW.Web.csproj|solutionrelative:paw.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 460,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:254354193:0:{71f361cc-493f-47c0-923f-f2570b6f8618}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\DTO\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "PAW.Models\\DTO\\ProductDTO.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\DTO\\ProductDTO.cs",
+              "RelativeToolTip": "PAW.Models\\DTO\\ProductDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:28.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "PAW.Web\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "PAW.Web\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-29T22:32:29.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "PAW.Web\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "PAW.Web\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Program.cs",
+              "RelativeDocumentMoniker": "PAW.Web\\Program.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Program.cs",
+              "RelativeToolTip": "PAW.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.API\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "PAW.API\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.API\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "PAW.API\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "PAW.Web\\Services\\ProductService.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Services\\ProductService.cs",
+              "RelativeToolTip": "PAW.Web\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "PAW.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "PAW.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-29T22:32:29.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "PAW.DataAccess\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "PAW.DataAccess\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\Partial\\Entity.cs",
+              "RelativeDocumentMoniker": "PAW.Models\\Partial\\Entity.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\Partial\\Entity.cs",
+              "RelativeToolTip": "PAW.Models\\Partial\\Entity.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "PAW.DataAccess\\Repositories\\RepositoryBase.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\RepositoryBase.cs",
+              "RelativeToolTip": "PAW.DataAccess\\Repositories\\RepositoryBase.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAswLQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "PAW.DataAccess\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "PAW.DataAccess\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RestProvider.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Architecture\\Providers\\RestProvider.cs",
+              "RelativeDocumentMoniker": "PAW.Architecture\\Providers\\RestProvider.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Architecture\\Providers\\RestProvider.cs",
+              "RelativeToolTip": "PAW.Architecture\\Providers\\RestProvider.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA3wEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PAW.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PAW.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-29T22:32:29.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "PAW.Models\\Entities\\Product.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Models\\Entities\\Product.cs",
+              "RelativeToolTip": "PAW.Models\\Entities\\Product.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA5wBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MigrationHistory.cs",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\MSSQL\\MigrationHistory.cs",
+              "RelativeDocumentMoniker": "PAW.DataAccess\\MSSQL\\MigrationHistory.cs",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.DataAccess\\MSSQL\\MigrationHistory.cs",
+              "RelativeToolTip": "PAW.DataAccess\\MSSQL\\MigrationHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T22:32:29.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "PAW.Web\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\PAW-clases\\PAW\\PAW\\PAW.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "PAW.Web\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-29T22:32:29.114Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 486,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

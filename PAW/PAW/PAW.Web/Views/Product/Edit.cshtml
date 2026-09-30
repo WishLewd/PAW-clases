@@ -1,0 +1,43 @@
+@model PAW.Models.DTO.ProductDTO
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<div class="container mt-4">
+    <h2>Edit Product</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="ProductId" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Product Name</label>
+                    <input asp-for="Name" class="form-control" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Rating" class="form-label">Rating (1 to 5)</label>
+                    <input asp-for="Rating" type="number" min="1" max="5" class="form-control" />
+                    <span asp-validation-for="Rating" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Comments" class="form-label">Comments</label>
+                    <input asp-for="Comments" class="form-control" />
+                </div>
+
+                <button type="submit" class="btn btn-warning">Update</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>

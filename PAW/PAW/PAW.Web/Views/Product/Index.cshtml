@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PAW.Models.DTO.ProductDTO>
+@model IEnumerable<PAW.Models.DTO.ProductDTO>
 @{
     ViewData["Title"] = "Product Page";
 }
@@ -96,21 +96,21 @@
 
                                             <!-- Edit -->
                                             <a asp-action="Edit"
-                                               asp-route-id="@product.Id"
+                                               asp-route-id="@product.ProductId"
                                                class="btn btn-sm btn-warning">
                                                 Edit
                                             </a>
 
                                             <!-- Details -->
                                             <a asp-action="Details"
-                                               asp-route-id="@product.Id"
+                                               asp-route-id="@product.ProductId"
                                                class="btn btn-sm btn-info">
                                                 Details
                                             </a>
 
                                             <!-- Delete -->
                                             <a asp-action="Delete"
-                                               asp-route-id="@product.Id"
+                                               asp-route-id="@product.ProductId"
                                                class="btn btn-sm btn-danger">
                                                 Delete
                                             </a>

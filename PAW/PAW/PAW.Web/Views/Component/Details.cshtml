@@ -1,0 +1,25 @@
+@model PAW.Models.DTO.ComponentDTO
+@{
+    ViewData["Title"] = "Component Details";
+}
+
+<div class="container mt-4">
+    <h2>Component Details</h2>
+    <hr />
+    <div class="card shadow-sm col-md-8">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">ID</dt>
+                <dd class="col-sm-8">@Model.Id</dd>
+
+                <dt class="col-sm-4">Name</dt>
+                <dd class="col-sm-8">@Model.Name</dd>
+
+                <dt class="col-sm-4">Content</dt>
+                <dd class="col-sm-8">@Model.Content</dd>
+            </dl>
+            <a asp-action="Edit" asp-route-id="@((int)Model.Id)" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

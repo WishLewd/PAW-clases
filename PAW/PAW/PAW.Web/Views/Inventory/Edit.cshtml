@@ -1,0 +1,35 @@
+@model PAW.Models.DTO.InventoryDTO
+@{
+    ViewData["Title"] = "Edit Inventory";
+}
+
+<div class="container mt-4">
+    <h2>Edit Inventory</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="InventoryId" />
+
+                <div class="mb-3">
+                    <label asp-for="ProductId" class="form-label">Product ID</label>
+                    <input asp-for="ProductId" type="number" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="UnitPrice" class="form-label">Unit Price</label>
+                    <input asp-for="UnitPrice" type="number" step="0.01" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="UnitsInStock" class="form-label">Units In Stock</label>
+                    <input asp-for="UnitsInStock" type="number" class="form-control" />
+                </div>
+
+                <button type="submit" class="btn btn-warning">Update</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>

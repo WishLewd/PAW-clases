@@ -1,0 +1,31 @@
+@model PAW.Models.DTO.NotificationDTO
+@{
+    ViewData["Title"] = "Notification Details";
+}
+
+<div class="container mt-4">
+    <h2>Notification Details</h2>
+    <hr />
+    <div class="card shadow-sm col-md-8">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">ID</dt>
+                <dd class="col-sm-8">@Model.Id</dd>
+
+                <dt class="col-sm-4">User ID</dt>
+                <dd class="col-sm-8">@Model.UserId</dd>
+
+                <dt class="col-sm-4">Message</dt>
+                <dd class="col-sm-8">@Model.Message</dd>
+
+                <dt class="col-sm-4">Is Read</dt>
+                <dd class="col-sm-8">@(Model.IsRead == true ? "Yes" : "No")</dd>
+
+                <dt class="col-sm-4">Created At</dt>
+                <dd class="col-sm-8">@Model.CreatedAt?.ToString("yyyy-MM-dd HH:mm")</dd>
+            </dl>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

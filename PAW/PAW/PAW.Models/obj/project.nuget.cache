@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "z73rX0xZhUw=",
+  "dgSpecHash": "/P7FMGhoH5A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\varit\\source\\repos\\PAW\\PAW.Models\\PAW.Models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\PAW-clases\\PAW\\PAW\\PAW.Models\\PAW.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gwish\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.31\\microsoft.netcore.app.ref.8.0.31.nupkg.sha512",
+    "C:\\Users\\gwish\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.31\\microsoft.windowsdesktop.app.ref.8.0.31.nupkg.sha512",
+    "C:\\Users\\gwish\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.31\\microsoft.aspnetcore.app.ref.8.0.31.nupkg.sha512"
+  ],
   "logs": []
 }
