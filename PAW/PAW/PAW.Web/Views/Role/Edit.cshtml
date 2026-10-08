@@ -1,26 +1,24 @@
 @model PAW.Models.DTO.RoleDTO
-@{
-    ViewData["Title"] = "Edit Role";
-}
 
-<div class="container mt-4">
-    <h2>Edit Role</h2>
-    <hr />
-    <div class="row">
-        <div class="col-md-6">
-            <form asp-action="Edit" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-                <input type="hidden" asp-for="RoleId" />
+<form asp-action="Edit" method="post">
+    <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title">Edit Role</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
 
-                <div class="mb-3">
-                    <label asp-for="RoleName" class="form-label">Role Name</label>
-                    <input asp-for="RoleName" class="form-control" required />
-                    <span asp-validation-for="RoleName" class="text-danger"></span>
-                </div>
+    <div class="modal-body">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <input type="hidden" asp-for="RoleId" />
 
-                <button type="submit" class="btn btn-warning">Update</button>
-                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-            </form>
+        <div class="mb-3">
+            <label asp-for="RoleName" class="form-label">Role Name</label>
+            <input asp-for="RoleName" class="form-control" required />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
         </div>
     </div>
-</div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-warning">Update</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+    </div>
+</form>

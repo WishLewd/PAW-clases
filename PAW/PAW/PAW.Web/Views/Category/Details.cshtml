@@ -1,28 +1,27 @@
 @model PAW.Models.DTO.CategoryDTO
-@{
-    ViewData["Title"] = "Category Details";
-}
 
-<div class="container mt-4">
-    <h2>Category Details</h2>
-    <hr />
-    <div class="card shadow-sm col-md-8">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Category ID</dt>
-                <dd class="col-sm-8">@Model.CategoryId</dd>
+<div class="modal-header bg-info text-white">
+    <h5 class="modal-title">Detalle de Categoría: @Model.CategoryName</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 
-                <dt class="col-sm-4">Name</dt>
-                <dd class="col-sm-8">@Model.CategoryName</dd>
+<div class="modal-body">
+    <dl class="row mb-0">
+        <dt class="col-sm-4">ID Categoría</dt>
+        <dd class="col-sm-8">@Model.CategoryId</dd>
 
-                <dt class="col-sm-4">Description</dt>
-                <dd class="col-sm-8">@Model.Description</dd>
+        <dt class="col-sm-4">Nombre</dt>
+        <dd class="col-sm-8">@Model.CategoryName</dd>
 
-                <dt class="col-sm-4">Modified Date</dt>
-                <dd class="col-sm-8">@Model.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</dd>
-            </dl>
-            <a asp-action="Edit" asp-route-id="@Model.CategoryId" class="btn btn-warning">Edit</a>
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-        </div>
-    </div>
+        <dt class="col-sm-4">Descripción</dt>
+        <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Description) ? "Sin descripción" : Model.Description)</dd>
+
+        <dt class="col-sm-4">Modificado</dt>
+        <dd class="col-sm-8">@Model.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</dd>
+    </dl>
+</div>
+
+<div class="modal-footer">
+    <a asp-action="Edit" asp-route-id="@Model.CategoryId" class="btn btn-warning btn-modal-action">Editar</a>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 </div>

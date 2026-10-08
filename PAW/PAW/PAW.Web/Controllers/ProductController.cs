@@ -8,6 +8,7 @@ namespace PAW.Web.Controllers
 {
     public class ProductController : Controller
     {
+        private const int PageSize = 25;
         private readonly IProductService _productService;
         private readonly ILogger<ProductController> _logger;
 
@@ -17,22 +18,37 @@ namespace PAW.Web.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        private bool IsAjaxRequest() => Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var result = await _productService.GetProductsAsync();
-            return View(result);
+            if (page < 1) page = 1;
+            var all = (await _productService.GetProductsAsync()) ?? [];
+            var totalItems = all.Count();
+            var paged = all.Skip((page - 1) * PageSize).Take(PageSize).ToList();
+
+            ViewBag.Pagination = new PaginationModel
+            {
+                CurrentPage = page,
+                PageSize = PageSize,
+                TotalItems = totalItems,
+                Controller = "Product",
+                Action = "Index"
+            };
+
+            return View(paged);
         }
 
         public async Task<IActionResult> Details(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);
             if (product == null) return NotFound();
-            return View(product);
+            return PartialView(product);
         }
 
         public IActionResult Create()
         {
-            return View(new ProductDTO());
+            return PartialView(new ProductDTO());
         }
 
         [HttpPost]
@@ -43,17 +59,21 @@ namespace PAW.Web.Controllers
             {
                 var success = await _productService.CreateProductAsync(product);
                 if (success)
+                {
+                    if (IsAjaxRequest())
+                        return Json(new { success = true });
                     return RedirectToAction(nameof(Index));
+                }
                 ModelState.AddModelError("", "Error saving product.");
             }
-            return View(product);
+            return PartialView(product);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);
             if (product == null) return NotFound();
-            return View(product);
+            return PartialView(product);
         }
 
         [HttpPost]
@@ -64,17 +84,21 @@ namespace PAW.Web.Controllers
             {
                 var success = await _productService.UpdateProductAsync(id, product);
                 if (success)
+                {
+                    if (IsAjaxRequest())
+                        return Json(new { success = true });
                     return RedirectToAction(nameof(Index));
+                }
                 ModelState.AddModelError("", "Error updating product.");
             }
-            return View(product);
+            return PartialView(product);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);
             if (product == null) return NotFound();
-            return View(product);
+            return PartialView(product);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -82,6 +106,8 @@ namespace PAW.Web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _productService.DeleteProductAsync(id);
+            if (IsAjaxRequest())
+                return Json(new { success = true });
             return RedirectToAction(nameof(Index));
         }
 

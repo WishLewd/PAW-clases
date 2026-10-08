@@ -7,7 +7,12 @@ namespace PAW.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductController(ILogger<ProductController> logger, IProductRepository productRepository) : ControllerBase
+    public class ProductController(
+        ILogger<ProductController> logger,
+        IProductRepository productRepository,
+        ICategoryRepository categoryRepository,
+        ISupplierRepository supplierRepository,
+        IInventoryRepository inventoryRepository) : ControllerBase
     {
         [HttpGet(Name = "GetProducts")]
         public async Task<IEnumerable<ProductDTO>> GetAll()
@@ -20,7 +25,24 @@ namespace PAW.API.Controllers
         public async Task<ActionResult<ProductDTO>> GetById(int id)
         {
             var product = await productRepository.FindAsync(id);
-            return ProductDTO.ConvertFrom(product);
+            if (product == null) return NotFound();
+            var dto = ProductDTO.ConvertFrom(product);
+            if (product.CategoryId.HasValue)
+            {
+                var cat = await categoryRepository.FindAsync(product.CategoryId.Value);
+                if (cat != null) dto.Category = CategoryDTO.ConvertFrom(cat);
+            }
+            if (product.SupplierId.HasValue)
+            {
+                var sup = await supplierRepository.FindAsync(product.SupplierId.Value);
+                if (sup != null) dto.Supplier = SupplierDTO.ConvertFrom(sup);
+            }
+            if (product.InventoryId.HasValue)
+            {
+                var inv = await inventoryRepository.FindAsync(product.InventoryId.Value);
+                if (inv != null) dto.Inventory = InventoryDTO.ConvertFrom(inv);
+            }
+            return dto;
         }
 
         /*[HttpPost("filter", Name = "FilterProducts")]

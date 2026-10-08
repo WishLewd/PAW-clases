@@ -1,0 +1,82 @@
+@model PAW.Web.Models.PaginationModel
+
+@if (Model != null && Model.TotalPages > 0)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center align-items-center">
+
+            <!-- First: << -->
+            <li class="page-item @(!Model.HasPrevious ? "disabled" : "")">
+                <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="1" aria-label="First" title="First">
+                    &lt;&lt;
+                </a>
+            </li>
+
+            <!-- Previous: < -->
+            <li class="page-item @(!Model.HasPrevious ? "disabled" : "")">
+                <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="@(Model.CurrentPage - 1)" aria-label="Previous" title="Previous">
+                    &lt;
+                </a>
+            </li>
+
+            <!-- Ellipsis before -->
+            @if (Model.CurrentPage - 1 > 1)
+            {
+                <li class="page-item disabled">
+                    <span class="page-link border-0">...</span>
+                </li>
+            }
+
+            <!-- Before (Previous page number) -->
+            @if (Model.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="@(Model.CurrentPage - 1)">
+                        @(Model.CurrentPage - 1)
+                    </a>
+                </li>
+            }
+
+            <!-- Current page formatted as "X" -->
+            <li class="page-item active" aria-current="page">
+                <span class="page-link fw-bold">"@Model.CurrentPage"</span>
+            </li>
+
+            <!-- Next page number -->
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="@(Model.CurrentPage + 1)">
+                        @(Model.CurrentPage + 1)
+                    </a>
+                </li>
+            }
+
+            <!-- Ellipsis after -->
+            @if (Model.CurrentPage + 1 < Model.TotalPages)
+            {
+                <li class="page-item disabled">
+                    <span class="page-link border-0">...</span>
+                </li>
+            }
+
+            <!-- Next: > -->
+            <li class="page-item @(!Model.HasNext ? "disabled" : "")">
+                <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="@(Model.CurrentPage + 1)" aria-label="Next" title="Next">
+                    &gt;
+                </a>
+            </li>
+
+            <!-- Last: >> -->
+            <li class="page-item @(!Model.HasNext ? "disabled" : "")">
+                <a class="page-link" asp-controller="@Model.Controller" asp-action="@Model.Action" asp-route-page="@Model.TotalPages" aria-label="Last" title="Last">
+                    &gt;&gt;
+                </a>
+            </li>
+
+        </ul>
+        <div class="text-center text-muted small mt-2">
+            Mostrando página @Model.CurrentPage de @Model.TotalPages (@Model.TotalItems registros en total, máx @Model.PageSize por página)
+        </div>
+    </nav>
+}

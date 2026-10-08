@@ -1,22 +1,21 @@
 @model PAW.Models.DTO.RoleDTO
-@{
-    ViewData["Title"] = "Role Details";
-}
 
-<div class="container mt-4">
-    <h2>Role Details</h2>
-    <hr />
-    <div class="card shadow-sm col-md-8">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Role ID</dt>
-                <dd class="col-sm-8">@Model.RoleId</dd>
+<div class="modal-header bg-info text-white">
+    <h5 class="modal-title">Role Details: @Model.RoleName</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 
-                <dt class="col-sm-4">Role Name</dt>
-                <dd class="col-sm-8">@Model.RoleName</dd>
-            </dl>
-            <a asp-action="Edit" asp-route-id="@Model.RoleId" class="btn btn-warning">Edit</a>
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-        </div>
-    </div>
+<div class="modal-body">
+    <dl class="row mb-0">
+        <dt class="col-sm-4">Role ID</dt>
+        <dd class="col-sm-8">@Model.RoleId</dd>
+
+        <dt class="col-sm-4">Role Name</dt>
+        <dd class="col-sm-8">@Model.RoleName</dd>
+    </dl>
+</div>
+
+<div class="modal-footer">
+    <a asp-action="Edit" asp-route-id="@Model.RoleId" class="btn btn-warning btn-modal-action">Edit</a>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>

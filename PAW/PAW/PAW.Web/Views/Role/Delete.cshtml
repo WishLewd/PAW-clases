@@ -1,26 +1,21 @@
 @model PAW.Models.DTO.RoleDTO
-@{
-    ViewData["Title"] = "Delete Role";
-}
 
-<div class="container mt-4">
-    <h2 class="text-danger">Delete Role</h2>
-    <h4>Are you sure you want to delete this role?</h4>
-    <hr />
-    <div class="card shadow-sm col-md-8">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Role ID</dt>
-                <dd class="col-sm-8">@Model.RoleId</dd>
+<form asp-action="Delete" method="post">
+    <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Delete Role</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
 
-                <dt class="col-sm-4">Role Name</dt>
-                <dd class="col-sm-8">@Model.RoleName</dd>
-            </dl>
-            <form asp-action="Delete" method="post">
-                <input type="hidden" asp-for="RoleId" />
-                <button type="submit" class="btn btn-danger">Confirm Delete</button>
-                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-            </form>
+    <div class="modal-body">
+        <input type="hidden" asp-for="RoleId" />
+        <p class="fs-5">Are you sure you want to delete this role?</p>
+        <div class="alert alert-warning">
+            <strong>@Model.RoleName</strong> (ID: @Model.RoleId)
         </div>
     </div>
-</div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+    </div>
+</form>

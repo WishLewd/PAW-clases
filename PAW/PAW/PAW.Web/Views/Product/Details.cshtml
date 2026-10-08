@@ -1,37 +1,121 @@
 @model PAW.Models.DTO.ProductDTO
-@{
-    ViewData["Title"] = "Product Details";
-}
 
-<div class="container mt-4">
-    <h2>Product Details</h2>
-    <hr />
-    <div class="card shadow-sm col-md-8">
+<div class="modal-header bg-info text-white">
+    <h5 class="modal-title">
+        <i class="bi bi-box-seam me-2"></i>Detalle de Producto: <strong>@Model.Name</strong>
+    </h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body p-4">
+    <!-- Información Principal del Producto -->
+    <div class="card mb-3 border-0 shadow-sm bg-light">
         <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Product ID</dt>
-                <dd class="col-sm-8">@Model.ProductId</dd>
-
-                <dt class="col-sm-4">Name</dt>
-                <dd class="col-sm-8">@Model.Name</dd>
-
-                <dt class="col-sm-4">Description</dt>
-                <dd class="col-sm-8">@Model.Description</dd>
-
-                <dt class="col-sm-4">Rating</dt>
-                <dd class="col-sm-8">@Model.Rating / 5</dd>
-
-                <dt class="col-sm-4">Comments</dt>
-                <dd class="col-sm-8">@Model.Comments</dd>
-
-                <dt class="col-sm-4">Created Date</dt>
-                <dd class="col-sm-8">@Model.CreatedDate.ToString("yyyy-MM-dd HH:mm")</dd>
-
-                <dt class="col-sm-4">Modified Date</dt>
-                <dd class="col-sm-8">@Model.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</dd>
-            </dl>
-            <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Edit</a>
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <h6 class="text-primary fw-bold mb-3 border-bottom pb-2">Información del Producto</h6>
+            <div class="row g-2">
+                <div class="col-sm-6"><strong>ID de Producto:</strong> @Model.ProductId</div>
+                <div class="col-sm-6"><strong>Nombre:</strong> @Model.Name</div>
+                <div class="col-sm-12"><strong>Descripción:</strong> @(string.IsNullOrWhiteSpace(Model.Description) ? "Sin descripción" : Model.Description)</div>
+                <div class="col-sm-6">
+                    <strong>Rating:</strong>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= Model.Rating)
+                        {
+                            <span class="text-warning">★</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">☆</span>
+                        }
+                    }
+                    (@Model.Rating/5)
+                </div>
+                <div class="col-sm-6"><strong>Comentarios:</strong> @(string.IsNullOrWhiteSpace(Model.Comments) ? "Ninguno" : Model.Comments)</div>
+                <div class="col-sm-6"><strong>Fecha Creación:</strong> @Model.CreatedDate.ToString("yyyy-MM-dd HH:mm")</div>
+                <div class="col-sm-6"><strong>Última Modificación:</strong> @Model.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</div>
+            </div>
         </div>
     </div>
+
+    <!-- Categoría Asociada -->
+    <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-header bg-primary text-white fw-bold">
+            <i class="bi bi-tags me-2"></i>Categoría Asociada
+        </div>
+        <div class="card-body">
+            @if (Model.Category != null)
+            {
+                <div class="row g-2">
+                    <div class="col-sm-4"><strong>ID Categoría:</strong> @Model.Category.CategoryId</div>
+                    <div class="col-sm-8"><strong>Nombre:</strong> @Model.Category.CategoryName</div>
+                    <div class="col-sm-12"><strong>Descripción:</strong> @Model.Category.Description</div>
+                    <div class="col-sm-12"><strong>Última Modificación:</strong> @Model.Category.ModifiedDate.ToString("yyyy-MM-dd HH:mm")</div>
+                </div>
+            }
+            else
+            {
+                <div class="text-muted fst-italic">
+                    No tiene categoría asignada @(Model.CategoryId.HasValue ? $"(ID Categoría: {Model.CategoryId.Value})" : "")
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Proveedor Asociado (Supplier) -->
+    <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-header bg-success text-white fw-bold">
+            <i class="bi bi-truck me-2"></i>Proveedor Asociado (Supplier)
+        </div>
+        <div class="card-body">
+            @if (Model.Supplier != null)
+            {
+                <div class="row g-2">
+                    <div class="col-sm-6"><strong>ID Proveedor:</strong> @Model.Supplier.SupplierId</div>
+                    <div class="col-sm-6"><strong>Empresa:</strong> @Model.Supplier.SupplierName</div>
+                    <div class="col-sm-6"><strong>Contacto:</strong> @Model.Supplier.ContactName (@Model.Supplier.ContactTitle)</div>
+                    <div class="col-sm-6"><strong>Teléfono:</strong> @Model.Supplier.Phone</div>
+                    <div class="col-sm-12"><strong>Dirección:</strong> @Model.Supplier.Address, @Model.Supplier.City, @Model.Supplier.Country</div>
+                </div>
+            }
+            else
+            {
+                <div class="text-muted fst-italic">
+                    No tiene proveedor asignado @(Model.SupplierId.HasValue ? $"(ID Proveedor: {Model.SupplierId.Value})" : "")
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Inventario Asociado (Inventory) -->
+    <div class="card mb-2 border-0 shadow-sm">
+        <div class="card-header bg-warning text-dark fw-bold">
+            <i class="bi bi-boxes me-2"></i>Inventario Asociado (Inventory)
+        </div>
+        <div class="card-body">
+            @if (Model.Inventory != null)
+            {
+                <div class="row g-2">
+                    <div class="col-sm-4"><strong>ID Inventario:</strong> @Model.Inventory.InventoryId</div>
+                    <div class="col-sm-4"><strong>Precio Unitario:</strong> @Model.Inventory.UnitPrice?.ToString("C")</div>
+                    <div class="col-sm-4"><strong>Unidades en Stock:</strong> <span class="badge bg-primary fs-6">@Model.Inventory.UnitsInStock</span></div>
+                    <div class="col-sm-6"><strong>Fecha Registro:</strong> @Model.Inventory.DateAdded?.ToString("yyyy-MM-dd")</div>
+                    <div class="col-sm-6"><strong>Última Actualización:</strong> @Model.Inventory.LastUpdated?.ToString("yyyy-MM-dd HH:mm")</div>
+                </div>
+            }
+            else
+            {
+                <div class="text-muted fst-italic">
+                    No tiene registro de inventario asignado @(Model.InventoryId.HasValue ? $"(ID Inventario: {Model.InventoryId.Value})" : "")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning btn-modal-action">
+        Editar Producto
+    </a>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 </div>

@@ -1,34 +1,33 @@
 @model PAW.Models.DTO.TaskDTO
-@{
-    ViewData["Title"] = "Task Details";
-}
 
-<div class="container mt-4">
-    <h2>Task Details</h2>
-    <hr />
-    <div class="card shadow-sm col-md-8">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">ID</dt>
-                <dd class="col-sm-8">@Model.Id</dd>
+<div class="modal-header bg-info text-white">
+    <h5 class="modal-title">Task Details: @Model.Name</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 
-                <dt class="col-sm-4">Name</dt>
-                <dd class="col-sm-8">@Model.Name</dd>
+<div class="modal-body">
+    <dl class="row mb-0">
+        <dt class="col-sm-4">ID</dt>
+        <dd class="col-sm-8">@Model.Id</dd>
 
-                <dt class="col-sm-4">Description</dt>
-                <dd class="col-sm-8">@Model.Description</dd>
+        <dt class="col-sm-4">Name</dt>
+        <dd class="col-sm-8">@Model.Name</dd>
 
-                <dt class="col-sm-4">Status</dt>
-                <dd class="col-sm-8">@Model.Status</dd>
+        <dt class="col-sm-4">Description</dt>
+        <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Description) ? "Sin descripción" : Model.Description)</dd>
 
-                <dt class="col-sm-4">Due Date</dt>
-                <dd class="col-sm-8">@Model.DueDate?.ToString("yyyy-MM-dd")</dd>
+        <dt class="col-sm-4">Status</dt>
+        <dd class="col-sm-8"><span class="badge bg-secondary">@Model.Status</span></dd>
 
-                <dt class="col-sm-4">Created At</dt>
-                <dd class="col-sm-8">@Model.CreatedAt?.ToString("yyyy-MM-dd HH:mm")</dd>
-            </dl>
-            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-        </div>
-    </div>
+        <dt class="col-sm-4">Due Date</dt>
+        <dd class="col-sm-8">@Model.DueDate?.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-4">Created At</dt>
+        <dd class="col-sm-8">@Model.CreatedAt?.ToString("yyyy-MM-dd HH:mm")</dd>
+    </dl>
+</div>
+
+<div class="modal-footer">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-modal-action">Edit</a>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>

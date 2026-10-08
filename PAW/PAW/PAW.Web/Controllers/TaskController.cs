@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using PAW.Models.DTO;
+using PAW.Web.Models;
 using PAW.Web.Services;
 
 namespace PAW.Web.Controllers
 {
     public class TaskController : Controller
     {
+        private const int PageSize = 25;
         private readonly ITaskService _taskService;
         private readonly ILogger<TaskController> _logger;
 
@@ -15,22 +17,37 @@ namespace PAW.Web.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        private bool IsAjaxRequest() => Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var result = await _taskService.GetTasksAsync();
-            return View(result);
+            if (page < 1) page = 1;
+            var result = (await _taskService.GetTasksAsync()) ?? Enumerable.Empty<TaskDTO>();
+            var totalItems = result.Count();
+            var paged = result.Skip((page - 1) * PageSize).Take(PageSize).ToList();
+
+            ViewBag.Pagination = new PaginationModel
+            {
+                CurrentPage = page,
+                PageSize = PageSize,
+                TotalItems = totalItems,
+                Controller = "Task",
+                Action = "Index"
+            };
+
+            return View(paged);
         }
 
         public async Task<IActionResult> Details(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
             if (task == null) return NotFound();
-            return View(task);
+            return PartialView(task);
         }
 
         public IActionResult Create()
         {
-            return View(new TaskDTO());
+            return PartialView(new TaskDTO());
         }
 
         [HttpPost]
@@ -41,17 +58,20 @@ namespace PAW.Web.Controllers
             {
                 var success = await _taskService.CreateTaskAsync(task);
                 if (success)
+                {
+                    if (IsAjaxRequest()) return Json(new { success = true });
                     return RedirectToAction(nameof(Index));
+                }
                 ModelState.AddModelError("", "Error saving task.");
             }
-            return View(task);
+            return PartialView(task);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
             if (task == null) return NotFound();
-            return View(task);
+            return PartialView(task);
         }
 
         [HttpPost]
@@ -62,17 +82,20 @@ namespace PAW.Web.Controllers
             {
                 var success = await _taskService.UpdateTaskAsync(id, task);
                 if (success)
+                {
+                    if (IsAjaxRequest()) return Json(new { success = true });
                     return RedirectToAction(nameof(Index));
+                }
                 ModelState.AddModelError("", "Error updating task.");
             }
-            return View(task);
+            return PartialView(task);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
             if (task == null) return NotFound();
-            return View(task);
+            return PartialView(task);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -80,6 +103,7 @@ namespace PAW.Web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _taskService.DeleteTaskAsync(id);
+            if (IsAjaxRequest()) return Json(new { success = true });
             return RedirectToAction(nameof(Index));
         }
     }

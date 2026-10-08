@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PAW.Models.DTO;
 
@@ -25,34 +25,60 @@ public class ProductDTO
     [JsonPropertyName("modifiedDate")]
     public DateTime ModifiedDate { get; set; }
 
+    [JsonPropertyName("categoryId")]
+    public int? CategoryId { get; set; }
+    [JsonPropertyName("category")]
+    public CategoryDTO? Category { get; set; }
+
+    [JsonPropertyName("supplierId")]
+    public int? SupplierId { get; set; }
+    [JsonPropertyName("supplier")]
+    public SupplierDTO? Supplier { get; set; }
+
+    [JsonPropertyName("inventoryId")]
+    public int? InventoryId { get; set; }
+    [JsonPropertyName("inventory")]
+    public InventoryDTO? Inventory { get; set; }
+
     public static ProductDTO ConvertFrom(Product product)
     {
+        if (product == null) return null!;
         return new ProductDTO
         {
             Id = Guid.NewGuid(),
             ProductId = product.ProductId,
-            Name = product.ProductName!,
-            Description = product.Description!,
+            Name = product.ProductName ?? string.Empty,
+            Description = product.Description ?? string.Empty,
             Rating = (int)(product.Rating ?? 0),
             ModifiedBy = product.ModifiedBy,
             CreatedBy = product.CreatedBy,
-            Comments = string.Empty, // Assuming comments are not present in the Product entity
-            CreatedDate = product.LastModified ?? DateTime.Now, // Assuming LastModified is used as CreatedDate
-            ModifiedDate = product.LastModified ?? DateTime.Now // Assuming LastModified is used as ModifiedDate
+            Comments = product.Comments ?? string.Empty,
+            CreatedDate = product.LastModified ?? DateTime.Now,
+            ModifiedDate = product.LastModified ?? DateTime.Now,
+            CategoryId = product.CategoryId,
+            SupplierId = product.SupplierId,
+            InventoryId = product.InventoryId,
+            Category = product.Category != null ? CategoryDTO.ConvertFrom(product.Category) : null,
+            Supplier = product.Supplier != null ? SupplierDTO.ConvertFrom(product.Supplier) : null,
+            Inventory = product.Inventory != null ? InventoryDTO.ConvertFrom(product.Inventory) : null
         };
     }
 
     public static Product ConvertTo(ProductDTO productDTO)
+    {
+        if (productDTO == null) return null!;
+        return new Product
         {
-            return new Product
-            {
-                ProductId = productDTO.ProductId,
-                ProductName = productDTO.Name,
-                Description = productDTO.Description,
-                Rating = productDTO.Rating,
-                ModifiedBy = productDTO.ModifiedBy,
-                CreatedBy = productDTO.CreatedBy,
-                LastModified = productDTO.ModifiedDate
-            };
+            ProductId = productDTO.ProductId,
+            ProductName = productDTO.Name,
+            Description = productDTO.Description,
+            Rating = productDTO.Rating,
+            ModifiedBy = productDTO.ModifiedBy,
+            CreatedBy = productDTO.CreatedBy,
+            LastModified = productDTO.ModifiedDate,
+            CategoryId = productDTO.CategoryId,
+            SupplierId = productDTO.SupplierId,
+            InventoryId = productDTO.InventoryId
+        };
     }
 }

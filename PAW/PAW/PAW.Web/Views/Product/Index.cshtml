@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Products</h2>
 
-        <a asp-action="Create" class="btn btn-primary">
+        <a asp-action="Create" class="btn btn-primary btn-modal-action">
             <i class="bi bi-plus-circle"></i>
             Add Product
         </a>
@@ -97,21 +97,21 @@
                                             <!-- Edit -->
                                             <a asp-action="Edit"
                                                asp-route-id="@product.ProductId"
-                                               class="btn btn-sm btn-warning">
+                                               class="btn btn-sm btn-warning btn-modal-action">
                                                 Edit
                                             </a>
 
                                             <!-- Details -->
                                             <a asp-action="Details"
                                                asp-route-id="@product.ProductId"
-                                               class="btn btn-sm btn-info">
+                                               class="btn btn-sm btn-info btn-modal-action">
                                                 Details
                                             </a>
 
                                             <!-- Delete -->
                                             <a asp-action="Delete"
                                                asp-route-id="@product.ProductId"
-                                               class="btn btn-sm btn-danger">
+                                               class="btn btn-sm btn-danger btn-modal-action">
                                                 Delete
                                             </a>
 
@@ -136,6 +136,8 @@
                 </table>
 
             </div>
+
+            @await Html.PartialAsync("_Pagination", (PAW.Web.Models.PaginationModel)ViewBag.Pagination)
 
         </div>
     </div>

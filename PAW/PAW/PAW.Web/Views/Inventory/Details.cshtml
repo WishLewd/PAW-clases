@@ -1,34 +1,33 @@
 @model PAW.Models.DTO.InventoryDTO
-@{
-    ViewData["Title"] = "Inventory Details";
-}
 
-<div class="container mt-4">
-    <h2>Inventory Details</h2>
-    <hr />
-    <div class="card shadow-sm col-md-8">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Inventory ID</dt>
-                <dd class="col-sm-8">@Model.InventoryId</dd>
+<div class="modal-header bg-info text-white">
+    <h5 class="modal-title">Inventory Details: ID #@Model.InventoryId</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 
-                <dt class="col-sm-4">Product ID</dt>
-                <dd class="col-sm-8">@Model.ProductId</dd>
+<div class="modal-body">
+    <dl class="row mb-0">
+        <dt class="col-sm-4">Inventory ID</dt>
+        <dd class="col-sm-8">@Model.InventoryId</dd>
 
-                <dt class="col-sm-4">Unit Price</dt>
-                <dd class="col-sm-8">@Model.UnitPrice?.ToString("C")</dd>
+        <dt class="col-sm-4">Product ID</dt>
+        <dd class="col-sm-8">@Model.ProductId</dd>
 
-                <dt class="col-sm-4">Units In Stock</dt>
-                <dd class="col-sm-8">@Model.UnitsInStock</dd>
+        <dt class="col-sm-4">Unit Price</dt>
+        <dd class="col-sm-8">@Model.UnitPrice?.ToString("C")</dd>
 
-                <dt class="col-sm-4">Date Added</dt>
-                <dd class="col-sm-8">@Model.DateAdded?.ToString("yyyy-MM-dd")</dd>
+        <dt class="col-sm-4">Units In Stock</dt>
+        <dd class="col-sm-8">@Model.UnitsInStock</dd>
 
-                <dt class="col-sm-4">Last Updated</dt>
-                <dd class="col-sm-8">@Model.LastUpdated?.ToString("yyyy-MM-dd HH:mm")</dd>
-            </dl>
-            <a asp-action="Edit" asp-route-id="@Model.InventoryId" class="btn btn-warning">Edit</a>
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-        </div>
-    </div>
+        <dt class="col-sm-4">Date Added</dt>
+        <dd class="col-sm-8">@Model.DateAdded?.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-4">Last Updated</dt>
+        <dd class="col-sm-8">@Model.LastUpdated?.ToString("yyyy-MM-dd HH:mm")</dd>
+    </dl>
+</div>
+
+<div class="modal-footer">
+    <a asp-action="Edit" asp-route-id="@Model.InventoryId" class="btn btn-warning btn-modal-action">Edit</a>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>
