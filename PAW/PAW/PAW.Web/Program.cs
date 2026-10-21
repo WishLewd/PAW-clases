@@ -15,6 +15,15 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddHttpClient<TipoCambioClient>(client =>
+{
+    client.BaseAddress = new Uri("https://api.hacienda.go.cr/");
+    client.Timeout = TimeSpan.FromSeconds(10);
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; MiApp/1.0)");
+    client.DefaultRequestHeaders.Accept.ParseAdd("application/json, text/plain, */*");
+    client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("es-CR,es;q=0.9");
+});
+builder.Services.AddScoped<IExchangeRateService, ExchangeRateService>();
 
 var app = builder.Build();
 

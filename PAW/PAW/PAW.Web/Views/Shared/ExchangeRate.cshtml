@@ -1,0 +1,46 @@
+@{
+    // Floating Exchange Rate Widget - Loaded and cached purely via JavaScript (site.js)
+}
+
+<div id="floating-exchange-rate" class="floating-exchange-rate" aria-label="Tipo de Cambio">
+    <div class="rate-header d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2">
+            <span class="rate-badge">Tipo de Cambio</span>
+            <small id="rate-date" class="rate-date text-muted">Cargando...</small>
+        </div>
+        <button type="button" id="rate-toggle-btn" class="rate-toggle-btn" title="Minimizar / Expandir" aria-label="Minimizar o expandir">
+            <span class="toggle-icon">−</span>
+        </button>
+    </div>
+
+    <!-- Spinner shown while loading / fetching -->
+    <div id="rate-loading" class="rate-loading py-2 text-center">
+        <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+        <span class="small ms-2 text-muted">Consultando Hacienda...</span>
+    </div>
+
+    <!-- Populated by site.js renderExchangeRate() -->
+    <div id="rate-content" class="rate-content" style="display: none;">
+        <div class="rate-items">
+            <div class="rate-item">
+                <span class="rate-label">USD Compra</span>
+                <span id="dolar-compra" class="rate-value text-success">₡---.--</span>
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">USD Venta</span>
+                <span id="dolar-venta" class="rate-value text-danger">₡---.--</span>
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">EUR (USD)</span>
+                <span id="euro-usd" class="rate-value text-primary">$---.--</span>
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">EUR (CRC)</span>
+                <span id="euro-crc" class="rate-value text-primary">₡---.--</span>
+            </div>
+        </div>
+    </div>
+</div>
+
